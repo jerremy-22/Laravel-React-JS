@@ -24,4 +24,10 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+Route::get('/react-example', function () {
+    return Inertia::render('NewPage', [
+        'message' => 'Hello from Laravel route',
+    ]);
+});
+
 require __DIR__.'/auth.php';
